@@ -1,0 +1,79 @@
+/* Estilo básico del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo del contenedor principal de la calculadora */
+.calculadora {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilo del input que muestra los resultados */
+input[type="text"] {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+/* Estilo general de los botones */
+button {
+    width: 22%;
+    height: 50px;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #eee;
+    transition: background-color 0.2s;
+}
+
+/* Estilo de los botones al pasar el mouse */
+button:hover {
+    background-color: #ddd;
+}
+
+/* Estilo de los botones de operación */
+button:active {
+    background-color: #ccc;
+}
+
+/* Estilo especial para el botón de igual */
+.button-equals {
+    width: 96%;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.button-equals:hover {
+    background-color: #45a049;
+}
+
+/* Estilo especial para el botón de limpiar */
+button:nth-child(3) {
+    background-color: #f44336;
+    color: white;
+}
+
+button:nth-child(3):hover {
+    background-color: #e53935;
+}
