@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Clásica</title>
-    <link rel="stylesheet" href="../calculadora/styles.css">
+    <title>Calculadora Científica</title>
+    <link rel="stylesheet" href="../calculadora/styles.css"> <!-- Asegúrate de que la ruta sea correcta -->
 </head>
 <body>
 
     <div class="calculadora">
         <input type="text" id="resultado" disabled>
+        <span id="operador"></span> <!-- Añadido para mostrar el operador -->
         <br>
         <button onclick="agregarValor('7')">7</button>
         <button onclick="agregarValor('8')">8</button>
@@ -38,13 +39,23 @@
         <button id="ordenar" onclick="ordenar()">Ordenar</button>
         <button id="revertir" onclick="revertir()">Revertir</button>
         <button id="quitar" onclick="quitar()">Quitar</button>
-
+        <button id="modulo" onclick="mod()">Modulo</button>
+        <button id="factorial" onclick="fact()">Factorial</button>
+        <br>
+        
+        <!-- Botones para funciones científicas -->
+        <button onclick="seno()">Sin</button>
+        <button onclick="coseno()">Cos</button>
+        <button onclick="tangente()">Tan</button>
+        <button onclick="raizCuadrada()">√</button>
+        <br>
+        
         <!-- Elemento para mostrar información -->
         <h2 id="info" class="grande" title="Info sobre el número">Info sobre el número</h2>
     </div>
 
     <!-- Enlazamos el archivo JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
     
 </body>
 </html>

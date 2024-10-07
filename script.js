@@ -22,6 +22,9 @@ function operar(op) {
     valorPrevio = valorActual;  // Guardar el valor actual como el valor previo
     operacion = op;  // Establecer la operación actual
     valorActual = '';  // Vaciar el valor actual para el siguiente número
+
+    // Mostrar el operador en el campo correspondiente
+    document.getElementById('operador').textContent = op; // Mostrar el operador
 }
 
 // Función para realizar el cálculo basado en la operación seleccionada
@@ -54,6 +57,7 @@ function calcular() {
     valorActual = resultado;  // Guardar el resultado como nuevo valor actual
     operacion = '';  // Resetear la operación
     valorPrevio = '';  // Resetear el valor previo
+    document.getElementById('operador').textContent = ''; // Limpiar el operador
     rellenar_info(resultado);  // Actualizar la información
 }
 
@@ -64,6 +68,7 @@ function limpiar() {
     operacion = '';  // Resetear la operación
     document.getElementById('resultado').value = '';  // Limpiar el campo de resultado
     document.getElementById('info').textContent = "Info sobre el número";  // Reiniciar el mensaje
+    document.getElementById('operador').textContent = ''; // Limpiar el operador
 }
 
 // Función para calcular el cuadrado del número actual
@@ -199,3 +204,4 @@ function quitar() {
     valorActual = numeros.join(',');  // Convertir de nuevo a string
     document.getElementById('resultado').value = valorActual;  // Mostrar el resultado
 }
+
