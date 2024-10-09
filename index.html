@@ -3,59 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Científica</title>
-    <link rel="stylesheet" href="../calculadora/styles.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <title>Calculadora Básica</title>
+    <style>
+        .calculator {
+            width: 200px;
+            margin: 50px auto;
+        }
+        .display {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+            font-size: 24px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+        .button {
+            padding: 20px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-
-    <div class="calculadora">
-        <input type="text" id="resultado" disabled>
-        <span id="operador"></span> <!-- Añadido para mostrar el operador -->
-        <br>
-        <button onclick="agregarValor('7')">7</button>
-        <button onclick="agregarValor('8')">8</button>
-        <button onclick="agregarValor('9')">9</button>
-        <button onclick="operar('/')">/</button>
-        <br>
-        <button onclick="agregarValor('4')">4</button>
-        <button onclick="agregarValor('5')">5</button>
-        <button onclick="agregarValor('6')">6</button>
-        <button onclick="operar('*')">*</button>
-        <br>
-        <button onclick="agregarValor('1')">1</button>
-        <button onclick="agregarValor('2')">2</button>
-        <button onclick="agregarValor('3')">3</button>
-        <button onclick="operar('-')">-</button>
-        <br>
-        <button onclick="agregarValor('0')">0</button>
-        <button onclick="agregarValor('.')">.</button>
-        <button onclick="limpiar()">C</button>
-        <button onclick="operar('+')">+</button>
-        <br>
-        <button class="button-equals" onclick="calcular()">=</button>
-
-        <!-- Nuevos botones para operaciones CSV -->
-        <button id="sumatorio" onclick="sumatorio()">Sumatorio</button>
-        <button id="ordenar" onclick="ordenar()">Ordenar</button>
-        <button id="revertir" onclick="revertir()">Revertir</button>
-        <button id="quitar" onclick="quitar()">Quitar</button>
-        <button id="modulo" onclick="mod()">Modulo</button>
-        <button id="factorial" onclick="fact()">Factorial</button>
-        <br>
-        
-        <!-- Botones para funciones científicas -->
-        <button onclick="seno()">Sin</button>
-        <button onclick="coseno()">Cos</button>
-        <button onclick="tangente()">Tan</button>
-        <button onclick="raizCuadrada()">√</button>
-        <br>
-        
-        <!-- Elemento para mostrar información -->
-        <h2 id="info" class="grande" title="Info sobre el número">Info sobre el número</h2>
+    <div class="calculator">
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+            <button class="button" onclick="appendNumber('1')">1</button>
+            <button class="button" onclick="appendNumber('2')">2</button>
+            <button class="button" onclick="appendNumber('3')">3</button>
+            <button class="button" onclick="clearDisplay()">C</button>
+        </div>
     </div>
 
-    <!-- Enlazamos el archivo JavaScript -->
-    <script src="script.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
-    
+    <script src="../calculadora/script.js"></script>
 </body>
 </html>
