@@ -1,54 +1,118 @@
+/* Estilos globales y fondo con los colores de la bandera de España */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
-    flex-direction: column;
+    background: linear-gradient(90deg, #aa1e23 33%, #f1bf00 33%, #f1bf00 66%, #aa1e23 66%);
+    margin: 0;
+    color: white;
 }
+
+/* Estilo principal de la calculadora */
 .calculator {
-    border: 1px solid #ccc;
+    background-color: #333;
+    border-radius: 20px;
     padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    width: 440px; /* Aumentado el ancho de la calculadora */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* Estilo de la pantalla */
 .display {
     width: 100%;
-    height: 50px;
+    height: 60px;
+    background-color: #000;
+    color: #0ff;
     text-align: right;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 24px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 2rem;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
+
+/* Estilo del contenedor de botones */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 15px;
+    width: 100%;
 }
+
+/* Estilo de los botones numéricos */
 .button {
-    padding: 20px;
-    font-size: 18px;
+    background-color: #444;
+    color: white;
     border: none;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Botones especiales rectangulares */
+.button.special {
+    background-color: #fbc02d;
+    color: black;
+    height: 70px; /* Mantener la altura */
+    width: 160px; /* Ampliar el ancho para que sean rectangulares */
+    font-size: 1.5rem;
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    grid-column: span 2; /* Ocupa dos columnas en la cuadrícula */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Efecto al hacer clic en los botones */
 .button:active {
-    background-color: #e0e0e0;
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* Botones de operadores con colores destacados */
 .button.operator {
-    background-color: #ff9500;
-    color: #fff;
+    background-color: #ff5722;
+    color: white;
 }
+
 .button.operator:active {
-    background-color: #e08b00;
+    background-color: #d84315;
 }
-.grande {
-    font-size: 20px;
-    margin-top: 20px;
+
+/* Botón igual con estilo más grande */
+.button.equal {
+    background-color: #00897b;
+    color: white;
+    grid-column: span 2;
+}
+
+.button.equal:active {
+    background-color: #00695c;
+}
+
+/* Botón de borrar con fondo rojo */
+.button.clear {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.button.clear:active {
+    background-color: #b71c1c;
+}
+
+/* Efecto hover para los botones */
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
