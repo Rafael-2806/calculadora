@@ -5,6 +5,17 @@ let currentOperation = ''; // Variable para almacenar la operación actual
 
 document.addEventListener('keydown', handleKeyPress);
 
+function validar(input) {
+    const validInput = input.replace(/,/g, '.');
+    const validRegex = /^-?\d+(\.\d+)?(-?\d+(\.\d+)?,?)*$/;
+    if (validRegex.test(validInput)) {
+        return true;
+    } else {
+        document.getElementById('display').value = 'Error';
+        return false;
+    }
+}
+
 function handleKeyPress(event) {
     const key = event.key;
     if (isNumber(key) || key === ',') {
