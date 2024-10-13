@@ -1,6 +1,7 @@
 let currentNumber = '';
 let previousNumber = '';
 let operation = null;
+let currentOperation = ''; // Variable para almacenar la operación actual
 
 document.addEventListener('keydown', handleKeyPress);
 
@@ -43,6 +44,8 @@ function chooseOperation(op) {
     operation = op;
     previousNumber = currentNumber;
     currentNumber = '';
+    currentOperation = previousNumber + ' ' + op; // Actualizar la operación actual
+    updateDisplay();
 }
 
 function calculate() {
@@ -69,6 +72,7 @@ function calculate() {
     currentNumber = result.toString().replace('.', ',');
     operation = null;
     previousNumber = '';
+    currentOperation = ''; // Limpiar la operación actual
     updateDisplay();
     rellenar_info(result);
 }
@@ -77,11 +81,16 @@ function clearDisplay() {
     currentNumber = '';
     previousNumber = '';
     operation = null;
+    currentOperation = ''; // Limpiar la operación actual
     updateDisplay();
 }
 
 function updateDisplay() {
-    document.getElementById('display').value = currentNumber;
+    if (currentOperation !== '') {
+        document.getElementById('display').value = currentOperation + ' ' + currentNumber;
+    } else {
+        document.getElementById('display').value = currentNumber;
+    }
 }
 
 function calculateSquare() {
@@ -159,55 +168,57 @@ function quitar() {
     updateDisplay();
 }
 
-function deleteLastDigit() {
-    currentNumber = currentNumber.slice(0, -1);
-    updateDisplay();
-}
 
-function changeSign() {
-    if (currentNumber === '') return;
-    currentNumber = (-parseFloat(currentNumber.replace(',', '.'))).toString().replace('.', ',');
-    updateDisplay();
-}
-
-function elevarAlCuadrado() {
+function sen() {
     if (currentNumber === '') return;
     const number = parseFloat(currentNumber.replace(',', '.'));
-    const result = number * number;
+    if (isNaN(number)) return;
+    const result = Math.sin(number * Math.PI / 180);
     currentNumber = result.toString().replace('.', ',');
-    updateDisplay();
-    rellenar_info(result);
+    document.getElementById('display').value = currentNumber;
 }
 
-function sumatorio() {
+function cos() {
     if (currentNumber === '') return;
-    const numbers = currentNumber.split(',').map(Number);
-    const result = numbers.reduce((acc, num) => acc + num, 0);
+    const number = parseFloat(currentNumber.replace(',', '.'));
+    if (isNaN(number)) return;
+    const result = Math.cos(number * Math.PI / 180);
     currentNumber = result.toString().replace('.', ',');
-    updateDisplay();
-    rellenar_info(result);
+    document.getElementById('display').value = currentNumber;
 }
 
-function ordenar() {
+function tan() {
     if (currentNumber === '') return;
-    const numbers = currentNumber.split(',').map(Number);
-    numbers.sort((a, b) => a - b);
-    currentNumber = numbers.join(',');
-    updateDisplay();
+    const number = parseFloat(currentNumber.replace(',', '.'));
+    if (isNaN(number) || number === 90 || number === -90) return;
+    const result = Math.tan(number * Math.PI / 180);
+    currentNumber = result.toString().replace('.', ',');
+    document.getElementById('display').value = currentNumber;
 }
 
-function revertir() {
+function senInv() {
     if (currentNumber === '') return;
-    const numbers = currentNumber.split(',');
-    numbers.reverse();
-    currentNumber = numbers.join(',');
-    updateDisplay();
+    const number = parseFloat(currentNumber.replace(',', '.'));
+    if (isNaN(number) || number < -1 || number > 1) return;
+    const result = Math.asin(number) * 180 / Math.PI;
+    currentNumber = result.toString().replace('.', ',');
+    document.getElementById('display').value = currentNumber;
 }
 
-function quitar() {
+function cosInv() {
     if (currentNumber === '') return;
-    const numbers = currentNumber.split(',');
-    numbers.pop();
-    currentNumber = numbers.join(',');
-    updateDisplay();
+    const number = parseFloat(currentNumber.replace(',', '.'));
+    if (isNaN(number) || number < -1 || number > 1) return;
+    const result = Math.acos(number) * 180 / Math.PI;
+    currentNumber = result.toString().replace('.', ',');
+    document.getElementById('display').value = currentNumber;
+}
+
+function tanInv() {
+    if (currentNumber === '') return;
+    const number = parseFloat(currentNumber.replace(',', '.'));
+    if (isNaN(number)) return;
+    const result = Math.atan(number) * 180 / Math.PI;
+    currentNumber = result.toString().replace('.', ',');
+    document.getElementById('display').value = currentNumber;
 }

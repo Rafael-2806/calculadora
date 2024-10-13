@@ -40,7 +40,7 @@ body {
 /* Estilo del contenedor de botones */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     width: 100%;
 }
@@ -62,27 +62,10 @@ body {
     cursor: pointer;
 }
 
-/* Botones especiales rectangulares */
-.button.special {
-    background-color: #fbc02d;
-    color: black;
-    height: 70px; /* Mantener la altura */
-    width: 160px; /* Ampliar el ancho para que sean rectangulares */
-    font-size: 1.5rem;
-    border-radius: 5px; /* Bordes ligeramente redondeados */
-    grid-column: span 2; /* Ocupa dos columnas en la cuadrícula */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* Efecto al hacer clic en los botones */
-.button:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 /* Botones de operadores con colores destacados */
 .button.operator {
-    background-color: #ff5722;
+    background-color: #ff0000; /* Cambiado a rojo */
     color: white;
 }
 
@@ -90,29 +73,50 @@ body {
     background-color: #d84315;
 }
 
-/* Botón igual con estilo más grande */
-.button.equal {
-    background-color: #00897b;
-    color: white;
-    grid-column: span 2;
-}
-
-.button.equal:active {
-    background-color: #00695c;
-}
-
-/* Botón de borrar con fondo rojo */
-.button.clear {
-    background-color: #d32f2f;
-    color: white;
-}
-
-.button.clear:active {
-    background-color: #b71c1c;
-}
-
 /* Efecto hover para los botones */
 .button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para la nueva columna de botones trigonométricos */
+.trigonometry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+}
+
+.trigonometry button {
+    width: 100%;
+    height: 70px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,  0, 0, 0.3);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+}
+
+.trigonometry button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.trigonometry button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para el título de información */
+#info {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    color: #aaa;
+    cursor: help;
+}
+
+#info:hover {
+    color: #fff;
 }

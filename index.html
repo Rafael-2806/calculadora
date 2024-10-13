@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
     <script src="scripts.js"></script>
     <title>Calculadora</title>
 </head>
@@ -22,26 +20,32 @@
             <button class="button" onclick="appendNumber('8')">8</button>
             <button class="button" onclick="appendNumber('9')">9</button>
             <button class="button operator" onclick="chooseOperation('/')">/</button>
+            <button class="button" id="sen" onclick="sen()">sen</button>
             <button class="button" onclick="appendNumber('4')">4</button>
             <button class="button" onclick="appendNumber('5')">5</button>
             <button class="button" onclick="appendNumber('6')">6</button>
             <button class="button operator" onclick="chooseOperation('*')">*</button>
+            <button class="button" id="cos" onclick="cos()">cos</button>
             <button class="button" onclick="appendNumber('1')">1</button>
             <button class="button" onclick="appendNumber('2')">2</button>
             <button class="button" onclick="appendNumber('3')">3</button>
             <button class="button operator" onclick="chooseOperation('-')">-</button>
+            <button class="button" id="tan" onclick="tan()">tan</button>
             <button class="button" onclick="appendNumber('0')">0</button>
             <button class="button" onclick="appendComma()">,</button>
             <button class="button" onclick="clearDisplay()">C</button>
             <button class="button operator" onclick="chooseOperation('+')">+</button>
+            <button class="button" id="senInv" onclick="senInv()">sen⁻¹</button>
             <button class="button" onclick="calculate()">=</button>
-            <button class="button" onclick="elevarAlCuadrado()">x²</button>
+            <button class="button" d="calculateSquare"onclick="calculateSquare()">x²</button>
             <button class="button" id="modulo" onclick="mod()">|X|</button>
             <button class="button" id="factorial" onclick="fact()">X!</button>
-            <button class="button" id="sumatorio" onclick="sumatorio()">Sumatorio</button>
-            <button class="button" id="ordenar" onclick="ordenar()">Ordenar</button>
-            <button class="button" id="revertir" onclick="revertir()">Revertir</button>
-            <button class="button" id="quitar" onclick="quitar()">Quitar</button>
+            <button class="button" id="cosInv" onclick="cosInv()">cos⁻¹</button>
+            <button class="button" id="sumatorio" onclick="sumatorio()">∑</button>
+            <button class="button" id="ordenar" onclick="ordenar()">Sort</button>
+            <button class="button" id="revertir" onclick="revertir()">Rev</button>
+            <button class="button" id="quitar" onclick="quitar()">Del</button>
+            <button class="button" id="tanInv" onclick="tanInv()">tan⁻¹</button>
         </div>
     </div>
     <h2 id="info" class="grande" title="Info sobre el número">Info sobre el número</h2>
